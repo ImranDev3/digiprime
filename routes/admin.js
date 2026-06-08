@@ -6,6 +6,13 @@ const Category = require('../models/Category');
 const Settings = require('../models/Settings');
 const { requireAdmin, redirectIfLoggedIn } = require('../middleware/auth');
 
+router.use((req, res, next) => {
+  const seg = req.path.split('/')[1] || 'dashboard';
+  const pageMap = { login: 'login', dashboard: 'dashboard', products: 'products', categories: 'categories', settings: 'settings' };
+  res.locals.currentPage = pageMap[seg] || 'dashboard';
+  next();
+});
+
 /* ───── Login ───── */
 router.get('/login', redirectIfLoggedIn, (req, res) => {
   res.render('admin/login', { error: null });
