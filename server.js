@@ -29,7 +29,9 @@ app.use((req, res, next) => {
 });
 
 app.get('/health', (req, res) => {
-  res.json({ ok: true, db: !!mongoose.connection.readyState, uptime: process.uptime() });
+  const state = mongoose.connection.readyState;
+  const labels = ['disconnected', 'connected', 'connecting', 'disconnecting'];
+  res.json({ ok: true, db: state === 1, state: labels[state] || state, uptime: process.uptime() });
 });
 
 app.get('/', async (req, res) => {
@@ -81,7 +83,7 @@ app.listen(PORT, () => {
   console.log('Server running on port ' + PORT);
 });
 
-mongoose.connect(MONGODB_URI, { serverSelectionTimeoutMS: 15000 })
+mongoose.connect(MONGODB_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(e => console.log('MongoDB error:', e.message));
 connectDB();
