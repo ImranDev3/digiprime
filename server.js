@@ -81,6 +81,20 @@ app.listen(PORT, () => {
   console.log('Server running on port ' + PORT);
 });
 
-mongoose.connect(MONGODB_URI, { serverSelectionTimeoutMS: 15000 })
-  .then(() => console.log('MongoDB connected'))
-  .catch(e => console.log('MongoDB error:', e.message));
+async function connectDB() {
+  try {
+    await mongoose.connect(MONGODB_URI, {
+      serverSelectionTimeoutMS: 15000,
+      connectTimeoutMS: 10000,
+      socketTimeoutMS: 45000,
+      tls: true,
+      retryWrites: true,
+      w: 'majority'
+    });
+    console.log('MongoDB connected');
+  } catch (e) {
+    console.log('MongoDB error:', e.message);
+    setTimeout(connectDB, 30000);
+  }
+}
+connectDB();
