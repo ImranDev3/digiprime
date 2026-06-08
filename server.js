@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const path = require('path');
 
+const apiRoutes = require('./routes/api');
+const adminRoutes = require('./routes/admin');
+
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -26,11 +29,14 @@ app.use((req, res, next) => {
 });
 
 app.get('/health', (req, res) => {
-  res.json({ ok: true, uptime: process.uptime() });
+  res.json({ ok: true, db: !!mongoose.connection.readyState, uptime: process.uptime() });
 });
 
 app.get('/', async (req, res) => {
   try {
+    if (!mongoose.connection.readyState) {
+      return res.send('Connecting to database... please refresh in 30 seconds');
+    }
     const Product = require('./models/Product');
     const Category = require('./models/Category');
     const Settings = require('./models/Settings');
@@ -57,6 +63,17 @@ app.get('/', async (req, res) => {
   }
 });
 
+app.get('/admin', (req, res) => {
+  res.redirect('/admin/dashboard');
+});
+
+app.use('/api', apiRoutes);
+app.use('/admin', adminRoutes);
+
+app.use((req, res) => {
+  res.status(404).send('Not found');
+});
+
 const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/digitalsubdesk';
 
@@ -64,6 +81,6 @@ app.listen(PORT, () => {
   console.log('Server running on port ' + PORT);
 });
 
-mongoose.connect(MONGODB_URI, { serverSelectionTimeoutMS: 10000 })
+mongoose.connect(MONGODB_URI, { serverSelectionTimeoutMS: 15000 })
   .then(() => console.log('MongoDB connected'))
   .catch(e => console.log('MongoDB error:', e.message));
