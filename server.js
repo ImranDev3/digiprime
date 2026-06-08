@@ -96,17 +96,15 @@ app.get('/health', (req, res) => {
   res.json({ ok: true, dbConnected, uptime: process.uptime() });
 });
 
-mongoose.connect(MONGODB_URI)
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
+
+mongoose.connect(MONGODB_URI, { serverSelectionTimeoutMS: 10000, connectTimeoutMS: 10000 })
   .then(() => {
     dbConnected = true;
     console.log('MongoDB connected');
   })
   .catch(e => {
     console.error('MongoDB connection error:', e.message);
-  })
-  .finally(() => {
-    app.listen(PORT, () => {
-      console.log(`Server running on http://localhost:${PORT}`);
-      console.log(`Admin panel: http://localhost:${PORT}/admin/login`);
-    });
   });
