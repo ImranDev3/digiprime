@@ -83,18 +83,19 @@ app.listen(PORT, () => {
 
 async function connectDB() {
   try {
+    console.log('Connecting to MongoDB...');
     await mongoose.connect(MONGODB_URI, {
-      serverSelectionTimeoutMS: 15000,
-      connectTimeoutMS: 10000,
+      serverSelectionTimeoutMS: 20000,
+      connectTimeoutMS: 15000,
       socketTimeoutMS: 45000,
-      tls: true,
-      retryWrites: true,
-      w: 'majority'
+      tlsInsecure: true,
     });
     console.log('MongoDB connected');
   } catch (e) {
     console.log('MongoDB error:', e.message);
-    setTimeout(connectDB, 30000);
+    if (e.name) console.log('MongoDB error name:', e.name);
+    if (e.code) console.log('MongoDB error code:', e.code);
+    setTimeout(connectDB, 15000);
   }
 }
 connectDB();
