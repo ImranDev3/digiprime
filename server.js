@@ -29,8 +29,32 @@ app.get('/health', (req, res) => {
   res.json({ ok: true, uptime: process.uptime() });
 });
 
-app.get('/', (req, res) => {
-  res.send('server running - node ' + process.version);
+app.get('/', async (req, res) => {
+  try {
+    const Product = require('./models/Product');
+    const Category = require('./models/Category');
+    const Settings = require('./models/Settings');
+
+    const cats = await Category.find({ visible: true }).sort({ tabOrder: 1 }).lean();
+    const categories = [];
+    for (const cat of cats) {
+      const products = await Product.find({ category: cat._id, visible: true })
+        .sort({ sortOrder: 1 }).lean();
+      if (products.length) {
+        categories.push({ ...cat, products });
+      }
+    }
+
+    const allSettings = await Settings.find({}).lean();
+    const settings = {};
+    allSettings.forEach(s => { settings[s.key] = s.value; });
+
+    const fbPage = settings.fb_page || process.env.FB_PAGE || 'https://web.facebook.com/subdeskofficial';
+
+    res.render('index', { categories, fbPage, settings, WA_NUMBER: process.env.WA_NUMBER });
+  } catch (e) {
+    res.status(500).send('Server error: ' + e.message);
+  }
 });
 
 const PORT = process.env.PORT || 3000;
