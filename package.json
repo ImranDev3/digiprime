@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node --tls-cipher-list=DEFAULT@SECLEVEL=1 server.js",
+    "start": "node server.js",
     "seed": "node seed.js",
     "dev": "node server.js"
   },
