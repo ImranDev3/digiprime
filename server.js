@@ -78,15 +78,28 @@ app.use((req, res) => {
 const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/digitalsubdesk';
 
+let dbConnected = false;
+
+app.use((req, res, next) => {
+  res.locals.dbConnected = dbConnected;
+  next();
+});
+
+app.get('/health', (req, res) => {
+  res.json({ ok: true, dbConnected, uptime: process.uptime() });
+});
+
 mongoose.connect(MONGODB_URI)
   .then(() => {
+    dbConnected = true;
     console.log('MongoDB connected');
+  })
+  .catch(e => {
+    console.error('MongoDB connection error:', e.message);
+  })
+  .finally(() => {
     app.listen(PORT, () => {
       console.log(`Server running on http://localhost:${PORT}`);
       console.log(`Admin panel: http://localhost:${PORT}/admin/login`);
     });
-  })
-  .catch(e => {
-    console.error('MongoDB connection error:', e.message);
-    process.exit(1);
   });
