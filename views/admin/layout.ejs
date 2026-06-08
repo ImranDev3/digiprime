@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Digital SubDesk</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="/assets/css/admin.css" />
+</head>
+<body>
+  <div class="admin-wrap">
+    <aside class="sidebar">
+      <div class="sidebar-head">
+        <span class="sidebar-logo">&#9670; Digital <span class="accent">SubDesk</span></span>
+        <span class="sidebar-sub">Admin Panel</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="/admin/dashboard" class="<%= currentPage === 'dashboard' ? 'active' : '' %>">
+          <i class="fas fa-chart-simple"></i> Dashboard
+        </a>
+        <a href="/admin/products" class="<%= currentPage === 'products' ? 'active' : '' %>">
+          <i class="fas fa-box"></i> Products
+        </a>
+        <a href="/admin/categories" class="<%= currentPage === 'categories' ? 'active' : '' %>">
+          <i class="fas fa-tags"></i> Categories
+        </a>
+        <a href="/admin/settings" class="<%= currentPage === 'settings' ? 'active' : '' %>">
+          <i class="fas fa-cog"></i> Settings
+        </a>
+        <a href="/admin/logout" class="logout-link">
+          <i class="fas fa-right-from-bracket"></i> Logout
+        </a>
+      </nav>
+      <a href="/" class="view-site" target="_blank"><i class="fas fa-external-link-alt"></i> View Site</a>
+    </aside>
+    <main class="main-content">
+      <%- body %>
+    </main>
+  </div>
+</body>
+</html>

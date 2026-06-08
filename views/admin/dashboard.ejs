@@ -1,0 +1,30 @@
+<%- include('layout', { body: `
+<div class="page-head">
+  <h1><i class="fas fa-chart-simple"></i> Dashboard</h1>
+</div>
+<div class="stat-row">
+  <div class="stat-card">
+    <div class="stat-num"><%= productCount %></div>
+    <div class="stat-label">Total Products</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num"><%= visibleCount %></div>
+    <div class="stat-label">Visible Products</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num"><%= catCount %></div>
+    <div class="stat-label">Categories</div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-head">Products per Category</div>
+  <table class="table">
+    <thead><tr><th>Category</th><th>Products</th></tr></thead>
+    <tbody>
+      <% perCat.forEach(function(c) { %>
+      <tr><td><%= c.name %></td><td><%= c.count %></td></tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+` }) %>

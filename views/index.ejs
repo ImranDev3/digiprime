@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital SubDesk</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav id="navbar">
+    <div class="navbar-inner">
+      <div class="navbar-flex">
+        <a href="/" class="navbar-logo">
+<span class="navbar-accent">&#9670;</span> Digital <span class="navbar-accent">SubDesk</span>
+        </a>
+        <a href="https://wa.me/<%= WA_NUMBER %>?text=Hi%20Digital%20SubDesk!" target="_blank" rel="noopener" class="navbar-wa">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO HEADER ═══ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">Your Trusted Digital Shop</h1>
+      <p class="hero-sub">Biggest Collection — Lowest Prices — Instant Delivery</p>
+    </div>
+  </section>
+
+  <!-- ═══ TRUST BADGES ═══ -->
+  <section class="trust">
+    <div class="trust-inner">
+      <span class="trust-item"><i class="fas fa-shield-alt trust-icon"></i> Warranty Available</span>
+      <span class="trust-item"><i class="fas fa-bolt trust-icon"></i> Fast Delivery</span>
+      <span class="trust-item"><i class="fas fa-headset trust-icon"></i> 24/7 Support</span>
+      <span class="trust-item"><i class="fas fa-exchange-alt trust-icon"></i> Easy Replacement</span>
+    </div>
+  </section>
+
+  <!-- ═══ PRODUCTS ═══ -->
+  <section class="section">
+    <div class="container">
+
+      <input type="text" id="productSearch" placeholder="Search products..." class="search-input">
+
+      <div class="tab-bar" id="tabBar">
+        <% categories.forEach(function(cat) { %>
+        <button class="tab-btn" data-tab="<%= cat.slug %>"><%= cat.name %></button>
+        <% }) %>
+      </div>
+
+      <% categories.forEach(function(cat) { %>
+      <div id="tab-<%= cat.slug %>" class="tab-content">
+        <div class="prod-grid">
+          <% cat.products.forEach(function(p) { %>
+          <div class="prod-card" data-name="<%= p.name %>">
+            <div class="head">
+              <span class="var-plus">+</span>
+              <span class="name"><%= p.name %></span>
+              <% if (p.badge) { %><span class="badge <%= p.badgeClass %>"><%= p.badge %></span><% } %>
+            </div>
+            <div class="detail-wrap"><div class="variations">
+              <% p.variations.forEach(function(v) { %>
+              <div class="var-row" data-pkg="<%= v.pkg || v.label %>" data-price="<%= v.price %>">
+                <span class="var-label"><%= v.label %></span>
+                <span class="var-price">$<%= Number(v.price).toLocaleString() %></span>
+                <button class="buy-btn">Buy</button>
+              </div>
+              <% }) %>
+            </div></div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+      <% }) %>
+
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="<%= fbPage %>" target="_blank" rel="noopener"><span class="navbar-accent">&#9670;</span> Digital <span class="navbar-accent">SubDesk</span></a>
+      </div>
+      <div class="footer-pay-label">Easy Payment</div>
+      <div class="footer-payments">
+        <span class="payment-item"><img src="https://download.logo.wine/logo/BKash/BKash-Logo.wine.png" alt="bKash" loading="lazy"> <span class="payment-name">bKash</span></span>
+        <span class="payment-item"><img src="https://download.logo.wine/logo/Nagad/Nagad-Logo.wine.png" alt="Nagad" loading="lazy"> <span class="payment-name">Nagad</span></span>
+        <span class="payment-item"><img src="https://cdn.simpleicons.org/tether/26A17B" alt="USDT" class="si" loading="lazy"> USDT</span>
+        <span class="payment-item"><img src="https://cdn.simpleicons.org/binance/F0B90B" alt="Binance" class="si" loading="lazy"> Binance</span>
+        <span class="payment-item"><img src="https://cdn.simpleicons.org/solana/00B4E6" alt="Solana" class="si" loading="lazy"> Solana</span>
+        <span class="payment-item"><img src="https://cdn.simpleicons.org/litecoin/808080" alt="Litecoin" loading="lazy"> Litecoin</span>
+      </div>
+      <p class="footer-copy">&copy; 2026 Digital SubDesk</p>
+    </div>
+  </footer>
+
+  <!-- ═══ BACK TO TOP ═══ -->
+  <button id="backToTop" class="back-top"><i class="fas fa-chevron-up"></i></button>
+
+  <!-- ═══ TOAST ═══ -->
+  <div id="toast" class="toast">
+    <i class="fas fa-check-circle toast-icon"></i>
+    <span>Order sent! We'll contact you on WhatsApp.</span>
+  </div>
+
+  <!-- ═══ CHAT ═══ -->
+  <div class="chat-widget">
+    <div id="chatMenu" class="chat-menu">
+      <a href="<%= fbPage %>" target="_blank" rel="noopener" class="chat-fb"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://wa.me/<%= WA_NUMBER %>?text=Hi%20Digital%20SubDesk!" target="_blank" rel="noopener" class="chat-wa"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://t.me/digiprime" target="_blank" rel="noopener" class="chat-tg"><i class="fab fa-telegram-plane"></i></a>
+      <a href="tel:<%= WA_NUMBER %>" class="chat-ph"><i class="fas fa-phone"></i></a>
+    </div>
+    <button id="chatToggle" class="chat-btn"><i class="fas fa-comment-dots"></i></button>
+  </div>
+
+  <!-- ═══ ORDER MODAL ═══ -->
+  <div id="orderModal" class="modal-overlay">
+    <div class="modal-box">
+      <h3>Complete Order</h3>
+      <p>Enter your details to proceed.</p>
+      <form id="orderForm" autocomplete="off">
+        <label for="custName">Your Name</label>
+        <input type="text" id="custName" placeholder="e.g. Rahim" required />
+        <label for="custPhone">Phone Number</label>
+        <input type="tel" id="custPhone" placeholder="e.g. 017XXXXXXXX" required />
+        <label for="custMsg" class="modal-label-msg">Message <span class="modal-opt">(optional)</span></label>
+        <textarea id="custMsg" rows="2" placeholder="e.g. I want the 6 months plan..."></textarea>
+        <div class="modal-actions">
+          <button type="button" class="modal-cancel" id="modalCancel">Cancel</button>
+          <button type="submit" class="modal-confirm">Proceed to WhatsApp</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

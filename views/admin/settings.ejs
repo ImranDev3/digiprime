@@ -1,0 +1,23 @@
+<%- include('layout', { body: `
+<div class="page-head">
+  <h1><i class="fas fa-cog"></i> Settings</h1>
+</div>
+<div class="card">
+  <% if (error) { %><div class="alert-error"><%= error %></div><% } %>
+  <form method="POST" class="settings-form">
+    <p style="font-size:.7rem;color:#6b7280;margin:0 0 16px">These settings override the .env file values. Leave empty to use defaults.</p>
+
+    <div class="form-group">
+      <label>WhatsApp Number</label>
+      <input type="text" name="wa_number" value="<%= settings.wa_number || '' %>" placeholder="<%= waNumber %>" />
+    </div>
+    <div class="form-group">
+      <label>Facebook Page URL</label>
+      <input type="text" name="fb_page" value="<%= settings.fb_page || '' %>" placeholder="<%= fbPage %>" />
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save Settings</button>
+    </div>
+  </form>
+</div>
+` }) %>

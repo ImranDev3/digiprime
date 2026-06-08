@@ -1,0 +1,68 @@
+<%- include('layout', { body: `
+<div class="page-head">
+  <h1><i class="fas fa-tags"></i> Categories</h1>
+</div>
+
+<div class="card">
+  <div class="card-head">Create New</div>
+  <% if (error) { %><div class="alert-error"><%= error %></div><% } %>
+  <form method="POST" action="/admin/categories/create" class="inline-form">
+    <input type="text" name="name" placeholder="Category name" required />
+    <input type="text" name="slug" placeholder="slug (auto if empty)" />
+    <input type="number" name="tabOrder" placeholder="Order" value="0" />
+    <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Create</button>
+  </form>
+</div>
+
+<div class="card">
+  <table class="table">
+    <thead><tr><th>Name</th><th>Slug</th><th>Order</th><th>Products</th><th>Status</th><th>Actions</th></tr></thead>
+    <tbody>
+      <% categories.forEach(function(c) { %>
+      <tr>
+        <td><%= c.name %></td>
+        <td><code><%= c.slug %></code></td>
+        <td><%= c.tabOrder %></td>
+        <td><%= counts[c._id] || 0 %></td>
+        <td>
+          <form method="POST" action="/admin/categories/toggle/<%= c._id %>" style="display:inline">
+            <button class="btn-sm <%= c.visible ? 'green' : 'dim' %>"><%= c.visible ? 'Visible' : 'Hidden' %></button>
+          </form>
+        </td>
+        <td class="action-cell">
+          <button class="btn-sm" onclick="editCat('<%= c._id %>','<%= c.name %>','<%= c.slug %>','<%= c.tabOrder %>')"><i class="fas fa-edit"></i></button>
+          <form method="POST" action="/admin/categories/delete/<%= c._id %>" style="display:inline" onsubmit="return confirm('Delete category and ALL its products?')">
+            <button class="btn-sm danger"><i class="fas fa-trash"></i></button>
+          </form>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<div id="editModal" class="modal" style="display:none">
+  <div class="modal-inner">
+    <form method="POST" class="inline-form">
+      <h3 style="margin:0 0 12px;font-size:.85rem">Edit Category</h3>
+      <input type="text" name="name" id="editName" required />
+      <input type="text" name="slug" id="editSlug" placeholder="slug" />
+      <input type="number" name="tabOrder" id="editOrder" placeholder="Order" />
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <button type="button" class="btn" onclick="document.getElementById('editModal').style.display='none'">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+function editCat(id, name, slug, order) {
+  document.getElementById('editName').value = name;
+  document.getElementById('editSlug').value = slug;
+  document.getElementById('editOrder').value = order;
+  const m = document.getElementById('editModal');
+  m.querySelector('form').action = '/admin/categories/edit/' + id;
+  m.style.display = 'flex';
+}
+</script>
+` }) %>

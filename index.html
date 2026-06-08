@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital SubDesk</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav id="navbar">
+    <div class="navbar-inner">
+      <div class="navbar-flex">
+        <a href="/" class="navbar-logo">
+<span class="navbar-accent">&#9670;</span> Digital <span class="navbar-accent">SubDesk</span>
+        </a>
+        <a href="https://wa.me/880XXXXXXXXX?text=Hi%20Digital%20SubDesk!" target="_blank" rel="noopener" class="navbar-wa">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO HEADER ═══ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">Your Trusted Digital Shop</h1>
+      <p class="hero-sub">Biggest Collection — Lowest Prices — Instant Delivery</p>
+    </div>
+  </section>
+
+  <!-- ═══ TRUST BADGES ═══ -->
+  <section class="trust">
+    <div class="trust-inner">
+      <span class="trust-item"><i class="fas fa-shield-alt trust-icon"></i> Warranty Available</span>
+      <span class="trust-item"><i class="fas fa-bolt trust-icon"></i> Fast Delivery</span>
+      <span class="trust-item"><i class="fas fa-headset trust-icon"></i> 24/7 Support</span>
+      <span class="trust-item"><i class="fas fa-exchange-alt trust-icon"></i> Easy Replacement</span>
+    </div>
+  </section>
+
+  <!-- ═══ PRODUCTS ═══ -->
+  <section class="section">
+    <div class="container">
+
+      <input type="text" id="productSearch" placeholder="Search products..." class="search-input">
+
+      <div class="tab-bar">
+        <button class="tab-btn active" data-tab="streaming">Streaming</button>
+        <button class="tab-btn" data-tab="vpn">VPN</button>
+        <button class="tab-btn" data-tab="ai">AI &amp; Tools</button>
+        <button class="tab-btn" data-tab="software">Software</button>
+        <button class="tab-btn" data-tab="education">Education</button>
+        <button class="tab-btn" data-tab="gift">Gift Cards</button>
+      </div>
+
+      <!-- ── Streaming ── -->
+      <div id="tab-streaming" class="tab-content">
+        <div class="prod-grid">
+
+          <div class="prod-card" data-name="Netflix Premium">
+            <div class="head"><span class="var-plus">+</span><span class="name">Netflix Premium</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · 1 Screen HD" data-price="350"><span class="var-label">1 Month · 1 Screen HD</span><span class="var-price">$350</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="1 Month · 4K UHD 4 Screens" data-price="650"><span class="var-label">1 Month · 4K UHD · 4 Screens</span><span class="var-price">$650</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · 4K 4 Screens" data-price="1500"><span class="var-label">3 Months · 4K UHD · 4 Screens</span><span class="var-price">$1,500</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · 4K 4 Screens" data-price="2500"><span class="var-label">6 Months · 4K UHD · 4 Screens</span><span class="var-price">$2,500</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · 4K 4 Screens" data-price="4000"><span class="var-label">12 Months · 4K UHD · 4 Screens</span><span class="var-price">$4,000</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Netflix Premium">
+            <div class="head"><span class="var-plus">+</span><span class="name">Netflix Premium</span><span class="badge">popular</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · 1 Screen HD" data-price="350"><span class="var-label">1 Month · 1 Screen HD</span><span class="var-price">$350</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="1 Month · 4K 4 Screens" data-price="650"><span class="var-label">1 Month · 4K UHD · 4 Screens</span><span class="var-price">$650</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · 4K 4 Screens" data-price="1500"><span class="var-label">3 Months · 4K UHD · 4 Screens</span><span class="var-price">$1,500</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · 4K 4 Screens" data-price="2500"><span class="var-label">6 Months · 4K UHD · 4 Screens</span><span class="var-price">$2,500</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Amazon Prime Video">
+            <div class="head"><span class="var-plus">+</span><span class="name">Amazon Prime Video</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Full Access" data-price="250"><span class="var-label">1 Month · Full Access</span><span class="var-price">$250</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Full Access" data-price="600"><span class="var-label">3 Months · Full Access</span><span class="var-price">$600</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · Full Access" data-price="1000"><span class="var-label">6 Months · Full Access</span><span class="var-price">$1,000</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · Full Access" data-price="1800"><span class="var-label">12 Months · Full Access</span><span class="var-price">$1,800</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Disney+ Hotstar">
+            <div class="head"><span class="var-plus">+</span><span class="name">Disney+ Hotstar</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Super Plan" data-price="299"><span class="var-label">1 Month · Super Plan</span><span class="var-price">$299</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Super Plan" data-price="699"><span class="var-label">3 Months · Super Plan</span><span class="var-price">$699</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · Super Plan" data-price="1499"><span class="var-label">12 Months · Super Plan</span><span class="var-price">$1,499</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="HBO Max">
+            <div class="head"><span class="var-plus">+</span><span class="name">HBO Max</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Standard" data-price="450"><span class="var-label">1 Month · Standard</span><span class="var-price">$450</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Standard" data-price="1100"><span class="var-label">3 Months · Standard</span><span class="var-price">$1,100</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · Standard" data-price="2000"><span class="var-label">6 Months · Standard</span><span class="var-price">$2,000</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · Standard" data-price="3500"><span class="var-label">12 Months · Standard</span><span class="var-price">$3,500</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="YouTube Premium">
+            <div class="head"><span class="var-plus">+</span><span class="name">YouTube Premium</span><span class="badge badge-trending">trending</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Family Plan" data-price="399"><span class="var-label">1 Month · Family Plan</span><span class="var-price">$399</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Family Plan" data-price="999"><span class="var-label">3 Months · Family Plan</span><span class="var-price">$999</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · Family Plan" data-price="1799"><span class="var-label">6 Months · Family Plan</span><span class="var-price">$1,799</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · Family Plan" data-price="2999"><span class="var-label">12 Months · Family Plan</span><span class="var-price">$2,999</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Spotify Premium">
+            <div class="head"><span class="var-plus">+</span><span class="name">Spotify Premium</span><span class="badge badge-trending">trending</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Ad-Free" data-price="179"><span class="var-label">1 Month · Ad-Free</span><span class="var-price">$179</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Ad-Free" data-price="450"><span class="var-label">3 Months · Ad-Free</span><span class="var-price">$450</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · Ad-Free" data-price="799"><span class="var-label">6 Months · Ad-Free</span><span class="var-price">$799</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · Ad-Free" data-price="1399"><span class="var-label">12 Months · Ad-Free</span><span class="var-price">$1,399</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── VPN ── -->
+      <div id="tab-vpn" class="tab-content hidden">
+        <div class="prod-grid">
+
+          <div class="prod-card" data-name="NordVPN">
+            <div class="head"><span class="var-plus">+</span><span class="name">NordVPN</span><span class="badge">best-seller</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · 6000+ Servers" data-price="299"><span class="var-label">1 Month · 6,000+ Servers</span><span class="var-price">$299</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · 6000+ Servers" data-price="699"><span class="var-label">3 Months · 6,000+ Servers</span><span class="var-price">$699</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · 6000+ Servers" data-price="999"><span class="var-label">6 Months · 6,000+ Servers</span><span class="var-price">$999</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · 6000+ Servers" data-price="1499"><span class="var-label">12 Months · 6,000+ Servers</span><span class="var-price">$1,499</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="ExpressVPN">
+            <div class="head"><span class="var-plus">+</span><span class="name">ExpressVPN</span><span class="badge">popular</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · 3000+ Servers" data-price="399"><span class="var-label">1 Month · 3,000+ Servers</span><span class="var-price">$399</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · 3000+ Servers" data-price="999"><span class="var-label">3 Months · 3,000+ Servers</span><span class="var-price">$999</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · 3000+ Servers" data-price="1799"><span class="var-label">6 Months · 3,000+ Servers</span><span class="var-price">$1,799</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="IPVanish">
+            <div class="head"><span class="var-plus">+</span><span class="name">IPVanish</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Unlimited Devices" data-price="249"><span class="var-label">1 Month · Unlimited Devices</span><span class="var-price">$249</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Unlimited Devices" data-price="599"><span class="var-label">3 Months · Unlimited Devices</span><span class="var-price">$599</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · Unlimited Devices" data-price="1499"><span class="var-label">12 Months · Unlimited Devices</span><span class="var-price">$1,499</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="CyberGhost">
+            <div class="head"><span class="var-plus">+</span><span class="name">CyberGhost</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · 7 Devices" data-price="199"><span class="var-label">1 Month · 7 Devices</span><span class="var-price">$199</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · 7 Devices" data-price="499"><span class="var-label">3 Months · 7 Devices</span><span class="var-price">$499</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · 7 Devices" data-price="1299"><span class="var-label">12 Months · 7 Devices</span><span class="var-price">$1,299</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── AI & Tools ── -->
+      <div id="tab-ai" class="tab-content hidden">
+        <div class="prod-grid">
+
+          <div class="prod-card" data-name="ChatGPT Plus">
+            <div class="head"><span class="var-plus">+</span><span class="name">ChatGPT Plus</span><span class="badge">hot</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · GPT-4 + DALL-E" data-price="999"><span class="var-label">1 Month · GPT-4 &amp; DALL·E</span><span class="var-price">$999</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · GPT-4 + DALL-E" data-price="2499"><span class="var-label">3 Months · GPT-4 &amp; DALL·E</span><span class="var-price">$2,499</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · GPT-4 + DALL-E" data-price="4499"><span class="var-label">6 Months · GPT-4 &amp; DALL·E</span><span class="var-price">$4,499</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · GPT-4 + DALL-E" data-price="7999"><span class="var-label">12 Months · GPT-4 &amp; DALL·E</span><span class="var-price">$7,999</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Canva Pro EDU">
+            <div class="head"><span class="var-plus">+</span><span class="name">Canva Pro (EDU)</span><span class="badge">sale</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Team Account" data-price="199"><span class="var-label">1 Month · Team Account</span><span class="var-price">$199</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Team Account" data-price="499"><span class="var-label">3 Months · Team Account</span><span class="var-price">$499</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · Team Account" data-price="899"><span class="var-label">6 Months · Team Account</span><span class="var-price">$899</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · Team Account" data-price="1499"><span class="var-label">12 Months · Team Account</span><span class="var-price">$1,499</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Adobe Creative Cloud">
+            <div class="head"><span class="var-plus">+</span><span class="name">Adobe Creative Cloud</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · All Apps" data-price="1999"><span class="var-label">1 Month · All Apps</span><span class="var-price">$1,999</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · All Apps" data-price="4999"><span class="var-label">3 Months · All Apps</span><span class="var-price">$4,999</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · All Apps" data-price="8999"><span class="var-label">6 Months · All Apps</span><span class="var-price">$8,999</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · All Apps" data-price="14999"><span class="var-label">12 Months · All Apps</span><span class="var-price">$14,999</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="CapCut Pro">
+            <div class="head"><span class="var-plus">+</span><span class="name">CapCut Pro</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Pro Features" data-price="349"><span class="var-label">1 Month · Pro Features</span><span class="var-price">$349</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Pro Features" data-price="849"><span class="var-label">3 Months · Pro Features</span><span class="var-price">$849</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · Pro Features" data-price="2499"><span class="var-label">12 Months · Pro Features</span><span class="var-price">$2,499</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="QuillBot Premium">
+            <div class="head"><span class="var-plus">+</span><span class="name">QuillBot Premium</span><span class="badge">sale</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Unlimited" data-price="179"><span class="var-label">1 Month · Unlimited</span><span class="var-price">$179</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Unlimited" data-price="449"><span class="var-label">3 Months · Unlimited</span><span class="var-price">$449</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · Unlimited" data-price="799"><span class="var-label">6 Months · Unlimited</span><span class="var-price">$799</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · Unlimited" data-price="1199"><span class="var-label">12 Months · Unlimited</span><span class="var-price">$1,199</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Perplexity AI Pro">
+            <div class="head"><span class="var-plus">+</span><span class="name">Perplexity AI Pro</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Pro Search" data-price="199"><span class="var-label">1 Month · Pro Search</span><span class="var-price">$199</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Pro Search" data-price="499"><span class="var-label">3 Months · Pro Search</span><span class="var-price">$499</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · Pro Search" data-price="1499"><span class="var-label">12 Months · Pro Search</span><span class="var-price">$1,499</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Grok AI">
+            <div class="head"><span class="var-plus">+</span><span class="name">Grok AI</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Premium" data-price="399"><span class="var-label">1 Month · Premium</span><span class="var-price">$399</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Premium" data-price="999"><span class="var-label">3 Months · Premium</span><span class="var-price">$999</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · Premium" data-price="1799"><span class="var-label">6 Months · Premium</span><span class="var-price">$1,799</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · Premium" data-price="2999"><span class="var-label">12 Months · Premium</span><span class="var-price">$2,999</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Google AI Pro">
+            <div class="head"><span class="var-plus">+</span><span class="name">Google AI Pro</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · with Veo 3" data-price="899"><span class="var-label">1 Month · Veo 3 Video Gen</span><span class="var-price">$899</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · with Veo 3" data-price="2199"><span class="var-label">3 Months · Veo 3 Video Gen</span><span class="var-price">$2,199</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · with Veo 3" data-price="3999"><span class="var-label">6 Months · Veo 3 Video Gen</span><span class="var-price">$3,999</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Software ── -->
+      <div id="tab-software" class="tab-content hidden">
+        <div class="prod-grid">
+
+          <div class="prod-card" data-name="Microsoft Office 365">
+            <div class="head"><span class="var-plus">+</span><span class="name">Office 365 Pro Plus</span><span class="badge">sale</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Pro Plus" data-price="499"><span class="var-label">1 Month · Pro Plus</span><span class="var-price">$499</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Pro Plus" data-price="1199"><span class="var-label">3 Months · Pro Plus</span><span class="var-price">$1,199</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · Pro Plus" data-price="1999"><span class="var-label">6 Months · Pro Plus</span><span class="var-price">$1,999</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · Pro Plus" data-price="3499"><span class="var-label">12 Months · Pro Plus</span><span class="var-price">$3,499</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="IDM Lifetime">
+            <div class="head"><span class="var-plus">+</span><span class="name">IDM Lifetime License</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 PC · Lifetime" data-price="1899"><span class="var-label">1 PC · Lifetime</span><span class="var-price">$1,899</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="2 PCs · Lifetime" data-price="2499"><span class="var-label">2 PCs · Lifetime</span><span class="var-price">$2,499</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="5 PCs · Lifetime" data-price="3999"><span class="var-label">5 PCs · Lifetime</span><span class="var-price">$3,999</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Truecaller Premium">
+            <div class="head"><span class="var-plus">+</span><span class="name">Truecaller Premium</span><span class="badge">sale</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="Lifetime · 1 Number" data-price="1599"><span class="var-label">Lifetime · 1 Number</span><span class="var-price">$1,599</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="Lifetime · 2 Numbers" data-price="2499"><span class="var-label">Lifetime · 2 Numbers</span><span class="var-price">$2,499</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="Lifetime · Family (5)" data-price="3999"><span class="var-label">Lifetime · Family (5 Nums)</span><span class="var-price">$3,999</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Grammarly Premium">
+            <div class="head"><span class="var-plus">+</span><span class="name">Grammarly Premium</span><span class="badge">sale</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Premium" data-price="299"><span class="var-label">1 Month · Premium</span><span class="var-price">$299</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Premium" data-price="749"><span class="var-label">3 Months · Premium</span><span class="var-price">$749</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · Premium" data-price="1199"><span class="var-label">6 Months · Premium</span><span class="var-price">$1,199</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · Premium" data-price="1999"><span class="var-label">12 Months · Premium</span><span class="var-price">$1,999</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Freepik Premium">
+            <div class="head"><span class="var-plus">+</span><span class="name">Freepik Premium</span><span class="badge">sale</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Unlimited" data-price="20"><span class="var-label">1 Month · Unlimited</span><span class="var-price">$20</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Unlimited" data-price="50"><span class="var-label">3 Months · Unlimited</span><span class="var-price">$50</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · Unlimited" data-price="90"><span class="var-label">6 Months · Unlimited</span><span class="var-price">$90</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · Unlimited" data-price="150"><span class="var-label">12 Months · Unlimited</span><span class="var-price">$150</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Creative Fabrica">
+            <div class="head"><span class="var-plus">+</span><span class="name">Creative Fabrica</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Premium" data-price="699"><span class="var-label">1 Month · Premium</span><span class="var-price">$699</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Premium" data-price="1699"><span class="var-label">3 Months · Premium</span><span class="var-price">$1,699</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · Premium" data-price="4999"><span class="var-label">12 Months · Premium</span><span class="var-price">$4,999</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Education ── -->
+      <div id="tab-education" class="tab-content hidden">
+        <div class="prod-grid">
+
+          <div class="prod-card" data-name="LinkedIn Premium">
+            <div class="head"><span class="var-plus">+</span><span class="name">LinkedIn Premium</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Premium" data-price="799"><span class="var-label">1 Month · Premium</span><span class="var-price">$799</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Premium" data-price="1999"><span class="var-label">3 Months · Premium</span><span class="var-price">$1,999</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · Premium" data-price="5999"><span class="var-label">12 Months · Premium</span><span class="var-price">$5,999</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="DataCamp">
+            <div class="head"><span class="var-plus">+</span><span class="name">DataCamp</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Personal" data-price="699"><span class="var-label">1 Month · Personal</span><span class="var-price">$699</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Personal" data-price="1799"><span class="var-label">3 Months · Personal</span><span class="var-price">$1,799</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · Personal" data-price="4999"><span class="var-label">12 Months · Personal</span><span class="var-price">$4,999</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Udemy Subscription">
+            <div class="head"><span class="var-plus">+</span><span class="name">Udemy Subscription</span><span class="badge">popular</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · All Courses" data-price="799"><span class="var-label">1 Month · All Courses</span><span class="var-price">$799</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · All Courses" data-price="1999"><span class="var-label">3 Months · All Courses</span><span class="var-price">$1,999</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · All Courses" data-price="3499"><span class="var-label">6 Months · All Courses</span><span class="var-price">$3,499</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · All Courses" data-price="4999"><span class="var-label">12 Months · All Courses</span><span class="var-price">$4,999</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Ahrefs">
+            <div class="head"><span class="var-plus">+</span><span class="name">Ahrefs</span><span class="badge">pro</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Lite" data-price="1499"><span class="var-label">1 Month · Lite</span><span class="var-price">$1,499</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Lite" data-price="3999"><span class="var-label">3 Months · Lite</span><span class="var-price">$3,999</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · Lite" data-price="6999"><span class="var-label">6 Months · Lite</span><span class="var-price">$6,999</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Semrush">
+            <div class="head"><span class="var-plus">+</span><span class="name">Semrush</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Pro" data-price="1299"><span class="var-label">1 Month · Pro</span><span class="var-price">$1,299</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Pro" data-price="3299"><span class="var-label">3 Months · Pro</span><span class="var-price">$3,299</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="12 Months · Pro" data-price="9999"><span class="var-label">12 Months · Pro</span><span class="var-price">$9,999</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Ahrefs + Semrush">
+            <div class="head"><span class="var-plus">+</span><span class="name">Ahrefs + Semrush</span><span class="badge">best-value</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="1 Month · Mega Bundle" data-price="2499"><span class="var-label">1 Month · Mega Bundle</span><span class="var-price">$2,499</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="3 Months · Mega Bundle" data-price="6499"><span class="var-label">3 Months · Mega Bundle</span><span class="var-price">$6,499</span><button class="buy-btn">Buy</button></div>
+              <div class="var-row" data-pkg="6 Months · Mega Bundle" data-price="11999"><span class="var-label">6 Months · Mega Bundle</span><span class="var-price">$11,999</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Gift Cards ── -->
+      <div id="tab-gift" class="tab-content hidden">
+        <div class="prod-grid">
+
+          <div class="prod-card" data-name="Apple Gift Card">
+            <div class="head"><span class="var-plus">+</span><span class="name">Apple Gift Card $10</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="$10 · USA" data-price="690"><span class="var-label">USA · $10 Value</span><span class="var-price">$690</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Apple Gift Card">
+            <div class="head"><span class="var-plus">+</span><span class="name">Apple Gift Card $25</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="$25 · USA" data-price="1600"><span class="var-label">USA · $25 Value</span><span class="var-price">$1,600</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Apple Gift Card">
+            <div class="head"><span class="var-plus">+</span><span class="name">Apple Gift Card $50</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="$50 · USA" data-price="3200"><span class="var-label">USA · $50 Value</span><span class="var-price">$3,200</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Google Play Card">
+            <div class="head"><span class="var-plus">+</span><span class="name">Google Play Card $10</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="$10 · USA" data-price="650"><span class="var-label">USA · $10 Value</span><span class="var-price">$650</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Steam Wallet">
+            <div class="head"><span class="var-plus">+</span><span class="name">Steam Wallet $10</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="$10 · Global" data-price="700"><span class="var-label">Global · $10 Value</span><span class="var-price">$700</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+          <div class="prod-card" data-name="Netflix Gift Card">
+            <div class="head"><span class="var-plus">+</span><span class="name">Netflix Gift Card $25</span></div>
+            <div class="detail-wrap"><div class="variations">
+              <div class="var-row" data-pkg="$25 · Global" data-price="1500"><span class="var-label">Global · $25 Value</span><span class="var-price">$1,500</span><button class="buy-btn">Buy</button></div>
+            </div></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="https://web.facebook.com/subdeskofficial" target="_blank" rel="noopener"><span class="navbar-accent">&#9670;</span> Digital <span class="navbar-accent">SubDesk</span></a>
+      </div>
+      <div class="footer-pay-label">Easy Payment</div>
+      <div class="footer-payments">
+        <span class="payment-item"><img src="https://download.logo.wine/logo/BKash/BKash-Logo.wine.png" alt="bKash" loading="lazy"> <span class="payment-name">bKash</span></span>
+        <span class="payment-item"><img src="https://download.logo.wine/logo/Nagad/Nagad-Logo.wine.png" alt="Nagad" loading="lazy"> <span class="payment-name">Nagad</span></span>
+        <span class="payment-item"><img src="https://cdn.simpleicons.org/tether/26A17B" alt="USDT" class="si" loading="lazy"> USDT</span>
+        <span class="payment-item"><img src="https://cdn.simpleicons.org/binance/F0B90B" alt="Binance" class="si" loading="lazy"> Binance</span>
+        <span class="payment-item"><img src="https://cdn.simpleicons.org/solana/00B4E6" alt="Solana" class="si" loading="lazy"> Solana</span>
+        <span class="payment-item"><img src="https://cdn.simpleicons.org/litecoin/808080" alt="Litecoin" loading="lazy"> Litecoin</span>
+      </div>
+      <p class="footer-copy">&copy; 2026 Digital SubDesk</p>
+    </div>
+  </footer>
+
+  <!-- ═══ BACK TO TOP ═══ -->
+  <button id="backToTop" class="back-top"><i class="fas fa-chevron-up"></i></button>
+
+  <!-- ═══ TOAST ═══ -->
+  <div id="toast" class="toast">
+    <i class="fas fa-check-circle toast-icon"></i>
+    <span>Order sent! We'll contact you on WhatsApp.</span>
+  </div>
+
+  <!-- ═══ CHAT ═══ -->
+  <div class="chat-widget">
+    <div id="chatMenu" class="chat-menu">
+      <a href="https://web.facebook.com/subdeskofficial" target="_blank" rel="noopener" class="chat-fb"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://wa.me/880XXXXXXXXX?text=Hi%20Digital%20SubDesk!" target="_blank" rel="noopener" class="chat-wa"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://t.me/digiprime" target="_blank" rel="noopener" class="chat-tg"><i class="fab fa-telegram-plane"></i></a>
+      <a href="tel:+880XXXXXXXXX" class="chat-ph"><i class="fas fa-phone"></i></a>
+    </div>
+    <button id="chatToggle" class="chat-btn"><i class="fas fa-comment-dots"></i></button>
+  </div>
+
+  <!-- ═══ ORDER MODAL ═══ -->
+  <div id="orderModal" class="modal-overlay">
+    <div class="modal-box">
+      <h3>Complete Order</h3>
+      <p>Enter your details to proceed.</p>
+      <form id="orderForm" autocomplete="off">
+        <label for="custName">Your Name</label>
+        <input type="text" id="custName" placeholder="e.g. Rahim" required />
+        <label for="custPhone">Phone Number</label>
+        <input type="tel" id="custPhone" placeholder="e.g. 017XXXXXXXX" required />
+        <label for="custMsg" class="modal-label-msg">Message <span class="modal-opt">(optional)</span></label>
+        <textarea id="custMsg" rows="2" placeholder="e.g. I want the 6 months plan..."></textarea>
+        <div class="modal-actions">
+          <button type="button" class="modal-cancel" id="modalCancel">Cancel</button>
+          <button type="submit" class="modal-confirm">Proceed to WhatsApp</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

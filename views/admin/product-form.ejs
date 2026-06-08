@@ -1,0 +1,80 @@
+<%- include('layout', { body: `
+<div class="page-head">
+  <h1><i class="fas fa-<%= product ? 'edit' : 'plus' %>"></i> <%= product ? 'Edit Product' : 'New Product' %></h1>
+  <a href="/admin/products" class="btn"><i class="fas fa-arrow-left"></i> Back</a>
+</div>
+<div class="card">
+  <% if (error) { %><div class="alert-error"><%= error %></div><% } %>
+  <form method="POST" class="product-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label>Product Name *</label>
+        <input type="text" name="name" value="<%= product ? product.name : '' %>" required />
+      </div>
+      <div class="form-group">
+        <label>Category *</label>
+        <select name="category" required>
+          <option value="">— Select —</option>
+          <% categories.forEach(function(c) { %>
+          <option value="<%= c._id %>" <%= product && String(product.category) === String(c._id) ? 'selected' : '' %>><%= c.name %></option>
+          <% }) %>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Badge (optional)</label>
+        <input type="text" name="badge" value="<%= product ? product.badge : '' %>" placeholder="e.g. popular, sale" />
+      </div>
+      <div class="form-group">
+        <label>Badge Class</label>
+        <input type="text" name="badgeClass" value="<%= product ? product.badgeClass : '' %>" placeholder="e.g. badge-trending" />
+      </div>
+      <div class="form-group">
+        <label>Sort Order</label>
+        <input type="number" name="sortOrder" value="<%= product ? product.sortOrder : 0 %>" />
+      </div>
+    </div>
+    <label style="margin-top:8px;display:block;font-size:.72rem;color:#6b7280;font-weight:600">Variations</label>
+    <div class="var-list" id="varList">
+      <% if (product && product.variations.length) {
+        product.variations.forEach(function(v, i) { %>
+        <div class="var-entry">
+          <input type="text" name="variations[label][]" value="<%= v.label %>" placeholder="Label" />
+          <input type="text" name="variations[pkg][]" value="<%= v.pkg %>" placeholder="Pkg ref (optional)" />
+          <input type="number" name="variations[price][]" value="<%= v.price %>" placeholder="Price" step="0.01" />
+          <button type="button" class="btn-sm danger remove-var"><i class="fas fa-xmark"></i></button>
+        </div>
+      <% }) } else { %>
+      <div class="var-entry">
+        <input type="text" name="variations[label][]" placeholder="e.g. 1 Month · HD" />
+        <input type="text" name="variations[pkg][]" placeholder="Pkg ref (optional)" />
+        <input type="number" name="variations[price][]" placeholder="Price" step="0.01" />
+        <button type="button" class="btn-sm danger remove-var"><i class="fas fa-xmark"></i></button>
+      </div>
+      <% } %>
+    </div>
+    <button type="button" class="btn" id="addVarBtn" style="margin-top:6px"><i class="fas fa-plus"></i> Add Variation</button>
+    <div class="form-actions">
+      <a href="/admin/products" class="btn">Cancel</a>
+      <button type="submit" class="btn btn-primary"><%= product ? 'Update' : 'Create' %> Product</button>
+    </div>
+  </form>
+</div>
+<script>
+document.getElementById('addVarBtn').addEventListener('click', function() {
+  const list = document.getElementById('varList');
+  const entry = document.createElement('div');
+  entry.className = 'var-entry';
+  entry.innerHTML = '<input type="text" name="variations[label][]" placeholder="Label" />' +
+    '<input type="text" name="variations[pkg][]" placeholder="Pkg ref (optional)" />' +
+    '<input type="number" name="variations[price][]" placeholder="Price" step="0.01" />' +
+    '<button type="button" class="btn-sm danger remove-var"><i class="fas fa-xmark"></i></button>';
+  list.appendChild(entry);
+  entry.querySelector('.remove-var').addEventListener('click', function() { entry.remove(); });
+});
+document.querySelectorAll('.remove-var').forEach(function(btn) {
+  btn.addEventListener('click', function() { this.closest('.var-entry').remove(); });
+});
+</script>
+` }) %>
